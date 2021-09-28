@@ -30,7 +30,7 @@ const ToDo = () => {
   }
 
   function filterList () {
-    let filtered = list.filter(item => item.complete === siteContext.displayCompleted);
+    let filtered = list.filter(item => item.complete !== siteContext.displayCompleted);
     setFilteredList(filtered);
   }
 
