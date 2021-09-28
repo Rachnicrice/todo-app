@@ -13,6 +13,7 @@ const ToDo = () => {
   const [filteredList, setFilteredList] = useState([]);
 
   function deleteItem(id) {
+    console.log(id);
     const items = list.filter( item => item.id !== id );
     setList(items);
   }
@@ -45,7 +46,7 @@ const ToDo = () => {
       <Header incomplete={incomplete}></Header>
       <section>
         <Form list={list} setList={setList} ></Form>
-        <List list={filteredList} toggleComplete={toggleComplete} deleteItem={deleteItem}></List>
+        <List list={list} toggleComplete={toggleComplete} deleteItem={deleteItem}></List>
       </section>
     </>
   );

@@ -11,6 +11,7 @@ function Form (props) {
   function addItem(item) {
     item.id = uuid();
     item.complete = false;
+    console.log(item, props.list);
     props.setList([...props.list, item]);
   }
 
