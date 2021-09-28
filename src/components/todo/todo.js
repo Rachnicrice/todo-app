@@ -10,7 +10,6 @@ const ToDo = () => {
 
   const [list, setList] = useState([]);
   const [incomplete, setIncomplete] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
   const [filteredList, setFilteredList] = useState([]);
 
   function deleteItem(id) {
@@ -46,7 +45,7 @@ const ToDo = () => {
       <Header incomplete={incomplete}></Header>
       <section>
         <Form list={list} setList={setList} ></Form>
-        <List list={filteredList} currentPage={currentPage} toggleComplete={toggleComplete} deleteItem={deleteItem}></List>
+        <List list={filteredList} toggleComplete={toggleComplete} deleteItem={deleteItem}></List>
       </section>
     </>
   );
