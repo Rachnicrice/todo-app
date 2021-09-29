@@ -26,17 +26,19 @@ const Header = (props) => {
           <Navbar.Divider />
           <Button className="bp3-minimal" icon="home" text="Home" />
           <Button className="bp3-minimal" icon="user" text="Settings" />
+        </Navbar.Group>
 
+        <Navbar.Group align={Alignment.RIGHT}>
           <If condition={authContext.isLoggedIn}>
             <Then>
-              Welcome {authContext.user.fullname} ...
-              <button onClick={authContext.logout}>Log Out</button>
+              <span>Welcome {authContext.user.fullname} ...</span> 
+              <Button className="bp3-minimal" icon="log-out" onClick={authContext.logout}>Log Out</Button>
             </Then>
             <Else>
               <form onSubmit={handleSubmit}>
                 <input name="username" onChange={handleChange} placeholder="Username" />
                 <input name="password" type="password" onChange={handleChange} placeholder="Password" />
-                <button type="submit">Log In</button>
+                <Button className="bp3-minimal" icon="log-in" type="submit">Log In</Button>
               </form>
             </Else>
           </If>
