@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const SiteContext = React.createContext();
 
@@ -16,6 +16,20 @@ function Site(props) {
     setItemsPerPage,
     setSortField,
   };
+
+  useEffect(() => {
+    let settings = {
+      displayCompleted,
+      itemsPerPage,
+      sortField,
+    };
+    localStorage.setItem('userSettings', JSON.stringify(settings));
+
+    let stringSettings = localStorage.getItem('userSettings');
+    let newSettings = JSON.parse(stringSettings);
+    state = [...state, ...newSettings];
+
+  }, [state])
 
   return (
     <SiteContext.Provider value={state}>
