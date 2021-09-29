@@ -8,7 +8,7 @@ function Site(props) {
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [sortField, setSortField] = useState('name');
 
-  const state = {
+  let state = {
     displayCompleted,
     itemsPerPage,
     sortField,
@@ -27,9 +27,9 @@ function Site(props) {
 
     let stringSettings = localStorage.getItem('userSettings');
     let newSettings = JSON.parse(stringSettings);
-    state = [...state, ...newSettings];
+    state = {...state, ...newSettings};
 
-  }, [state])
+  }, [state]);
 
   return (
     <SiteContext.Provider value={state}>
