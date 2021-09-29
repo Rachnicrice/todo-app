@@ -7,8 +7,14 @@
   background: #293742;
   color: #F5F8FA;
 
-  * {
+  .bp3-align-left * {
     color:  #F5F8FA;
+  }
+
+  .bp3-align-right form {
+    button, span {
+      color:  #F5F8FA;
+    }
   }
 }
 
@@ -22,7 +28,7 @@ section {
     div {
       flex-direction: column;
     }
-    
+
   }
 
   div {
