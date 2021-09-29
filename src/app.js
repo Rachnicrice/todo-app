@@ -1,14 +1,18 @@
 import React from 'react';
 
-import ToDo from './components/todo/todo.js';
 import SiteContext from './context/Site.js';
+import AuthContext from './context/Auth.js';
+
+import ToDo from './components/todo/todo.js';
 import './scss/app.scss';
 
 export default class App extends React.Component {
   render() {
     return (
       <SiteContext>
-        <ToDo />
+        <AuthContext>
+          <ToDo />
+        </AuthContext>
       </SiteContext>
     );
   }
