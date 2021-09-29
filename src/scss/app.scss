@@ -1,3 +1,31 @@
 @import "~normalize.css";
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import "~@blueprintjs/core/lib/scss/variables";
+
+.bp3-navbar {
+  background: #293742;
+  color: #F5F8FA;
+
+  * {
+    color:  #F5F8FA;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+
+  form {
+    flex: 1;
+    
+    div {
+      flex-direction: column;
+    }
+    
+  }
+
+  div {
+    flex: 1;
+  }
+}

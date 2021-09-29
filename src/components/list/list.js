@@ -24,7 +24,7 @@ function List(props) {
     <div>
       {taskList.map((item, idx) => (
         <Card elevation={Elevation.THREE}>
-          <div id={idx} key={item.id}>
+          <div id={item.id} key={item.id}>
             <div>
               <Icon icon="cross" onClick={() => props.deleteItem(item.id)} />
               <span onClick={() => props.toggleComplete(item.id)}>{item.complete ? 'Complete' : 'In Progress'}</span>
